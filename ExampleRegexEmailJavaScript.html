@@ -1,0 +1,29 @@
+<!-- Email validation with javascript using REGEX. -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script>	
+		function validarEmail(email) {
+			var re = /\S+@\S+\.\S+/;
+			var validacao = re.test(email);
+			if(validacao==true){
+				document.getElementById("mensage").innerHTML = "email valid!";
+			}else{
+				document.getElementById("mensage").innerHTML = "email invalid!";
+			}
+			return re.test(email);
+		}
+	</script>
+</head>
+<body>
+  <form>
+	
+	<h2>Email validation with javascript using REGEX</h2>
+	<div>
+		E-mail:<input type="text" onblur="validarEmail(value)"></input>
+	</div>
+	<div id="mensage"></div>
+  </form>	
+</body>
+
+</html>
